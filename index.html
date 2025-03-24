@@ -30,6 +30,7 @@
             border-radius: 5px;
             overflow: hidden;
             transition: color 0.3s;
+            z-index: 1;
         }
         .slide-in-bar a::before {
             content: "";
@@ -42,13 +43,14 @@
             transform-origin: bottom left;
             transform: scale(0);
             transition: transform 0.3s;
+            z-index: -1;
         }
         .slide-in-bar a:hover::before {
             transform: scale(1);
             top: 0;
         }
         .slide-in-bar a:hover {
-            color: #1DA1F2;
+            color: #000;
         }
         .slide-in-bar a::after {
             content: attr(data-title);
