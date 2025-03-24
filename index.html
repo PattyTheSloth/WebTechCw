@@ -18,22 +18,26 @@
             align-items: center;
             justify-content: space-around;
             transform: translateX(-100%);
-            transition: transform 1.5s ease; /* Added transition for smooth sliding */
+            transition: transform 1.5s ease;
+            visibility: hidden;
+            opacity: 0;
         }
         .slide-in-bar a {
-            flex: 1; /* Ensures even spacing */
-            text-align: center;
-            position: relative;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
+            width: auto;  /* Fixed stretched buttons */
             padding: 10px 20px;
+            margin: 0 10px;  /* Added spacing */
+            text-align: center;
+            color: #fff;
             background-color: #0d8de0;
             border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
             overflow: hidden;
             transition: color 0.3s;
             z-index: 1;
         }
+
         .slide-in-bar a::before {
             content: "";
             position: absolute;
@@ -54,6 +58,7 @@
         .slide-in-bar a:hover {
             color: #000;
         }
+
         .slide-in-bar a::after {
             content: attr(data-title);
             position: absolute;
@@ -73,13 +78,13 @@
         }
 
         #ideaLamp {
-            width: 80px;   /* Increased size */
+            width: 80px;
             height: 80px;
             background-image: url('./images/image_2025-03-24_180019104-removebg-preview.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            margin-left: auto; 
+            margin-left: auto;
             margin-right: 20px;
             cursor: pointer;
         }
@@ -112,8 +117,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const slideBar = document.getElementById('slideInBar');
-            slideBar.style.transition = 'transform 1.5s';
-            slideBar.style.transform = 'translateX(0)';
+            setTimeout(() => {
+                slideBar.style.transform = 'translateX(0)';
+                slideBar.style.visibility = 'visible';
+                slideBar.style.opacity = '1';
+            }, 100);  // Added slight delay for smooth loading
         });
 
         const ideaLamp = document.getElementById('ideaLamp');
