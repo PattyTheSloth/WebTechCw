@@ -21,16 +21,51 @@
             animation: slideIn 1.5s forwards;
         }
         .slide-in-bar a {
+            position: relative;
             color: #fff;
             text-decoration: none;
             font-weight: bold;
             padding: 10px 20px;
             background-color: #0d8de0;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+        .slide-in-bar a::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transform-origin: bottom left;
+            transform: scale(0);
+            transition: transform 0.3s;
+        }
+        .slide-in-bar a:hover::before {
+            transform: scale(1);
+            top: 0;
         }
         .slide-in-bar a:hover {
-            background-color: #0b7cbf;
+            color: #1DA1F2;
+        }
+        .slide-in-bar a::after {
+            content: attr(data-title);
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .slide-in-bar a:hover::after {
+            opacity: 1;
         }
         @keyframes slideIn {
             from {
@@ -48,10 +83,10 @@
 </head>
 <body>
     <div class="slide-in-bar">
-        <a href="index.html">Home</a>
-        <a href="#">Quiz 1</a>
-        <a href="#">Quiz 2</a>
-        <a href="#">Quiz 3</a>
+        <a href="index.html" data-title="Home">Home</a>
+        <a href="#" data-title="Quiz 1">Quiz 1</a>
+        <a href="#" data-title="Quiz 2">Quiz 2</a>
+        <a href="#" data-title="Quiz 3">Quiz 3</a>
     </div>
     <div class="content">
         <h1>Home page for Web Tech Coursework</h1>
