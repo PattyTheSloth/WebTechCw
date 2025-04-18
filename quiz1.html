@@ -121,7 +121,7 @@
         }
 
         .options {
-            diesplay: inline-block;
+            display: inline-block;
             text-align: left;
         }
 
@@ -153,6 +153,29 @@
         label.disabled {
             pointer-events: none;
         }
+
+        .submit-container {
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        #submitBtn {
+            padding: 10px 20px;
+            background-color: #1DA1F2;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #submitBtn:hover {
+            background-color: #0d8de0;
+        }
     </style>
 </head>
 <body>
@@ -166,7 +189,7 @@
 
     <div class="content">
         <h1>Game Quiz</h1>
-        <div id="quiz">
+        <div id="quiz">       
             <div class="question-block" data-question="q1">
                 <h3>Question 1: Which game is that?</h3>
                 <img src="images/game1.png" alt="Game 1">
@@ -286,7 +309,10 @@
                     <label><input type="radio" name="q10"> e) Call of Duty</label>
                 </div>
             </div>
+        </div>
 
+        <div class="submit-container">
+            <button id="submitBtn">Submit</button>
         </div>
     </div>
 
@@ -298,53 +324,46 @@
                 slideBar.style.visibility = 'visible';
                 slideBar.style.opacity = '1';
             }, 100);
-        });
 
-        const ideaLamp = document.getElementById('ideaLamp');
+            const ideaLamp = document.getElementById('ideaLamp');
+            ideaLamp.addEventListener('mouseenter', () => {
+                ideaLamp.style.transform = 'scale(1.1) rotate(10deg)';
+            });
+            ideaLamp.addEventListener('mouseleave', () => {
+                ideaLamp.style.transform = 'scale(1) rotate(0deg)';
+            });
 
-        ideaLamp.addEventListener('mouseenter', () => {
-            ideaLamp.style.transform = 'scale(1.1) rotate(10deg)';
-        });
+            document.getElementById('submitBtn').addEventListener('click', () => {
+                let score = 0;
+                let total = document.querySelectorAll('.question-block').length;
 
-        ideaLamp.addEventListener('mouseleave', () => {
-            ideaLamp.style.transform = 'scale(1) rotate(0deg)';
-        });
+                document.querySelectorAll('.question-block').forEach(block => {
+                    const selected = block.querySelector('input[type="radio"]:checked');
+                    const labels = block.querySelectorAll('label');
 
-        let score = 0;
-        const totalQuestions = 10;
-        let answered = 0;
+                    // Reset styles
+                    labels.forEach(label => {
+                        label.classList.remove('correct', 'incorrect', 'disabled');
+                    });
 
-        document.querySelectorAll('.question-block').forEach(block => {
-            const options = block.querySelectorAll('input[type="radio"]');
-            options.forEach(option => {
-                option.addEventListener('change', () => {
-                    if (block.classList.contains('answered')) return;
+                    if (selected) {
+                        const isCorrect = selected.dataset.correct === "true";
+                        const selectedLabel = selected.closest('label');
 
-                    block.classList.add('answered');
-                    answered++;
+                        if (isCorrect) {
+                            selectedLabel.classList.add('correct');
+                            score++;
+                        } else {
+                            selectedLabel.classList.add('incorrect');
+                            block.querySelector('input[data-correct="true"]').closest('label').classList.add('correct');
+                        }
 
-                    const parentLabel = option.closest('label');
-                    const isCorrect = option.dataset.correct === "true";
-
-                    if (isCorrect) {
-                        parentLabel.classList.add('correct');
-                        score++;
-                    } else {
-                        parentLabel.classList.add('incorrect');
-                        block.querySelector('input[data-correct="true"]')
-                             .closest('label')
-                             .classList.add('correct');
-                    }
-
-                    // Disable all options for that question
-                    block.querySelectorAll('label').forEach(label => label.classList.add('disabled'));
-
-                    if (answered === totalQuestions) {
-                        setTimeout(() => {
-                            alert(`Congratulations, your final score is: ${score}`);
-                        }, 500);
+                        // Lock options after submit
+                        labels.forEach(label => label.classList.add('disabled'));
                     }
                 });
+
+                alert(`Your final score is: ${score} out of ${total}`);
             });
         });
     </script>
