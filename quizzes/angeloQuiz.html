@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="angelo.css" />
+    <title>Angelo's Pokemon Quiz</title>
+
+    <!-- Timer -->
+    <div id="timer-container" style="display: none;">
+      <img src="../images/timer.png" alt="Clock" id="timer-icon" />
+      <span id="timer">10:00</span>
+    </div>
+    
+  </head>
+
+  <body>
+  <!-- Slide-in Nav Bar -->
+  <div class="slide-in-bar" id="slideInBar">
+    <a href="index.html" data-title="Home">Home</a>
+    <a href="#" data-title="Quiz 1">Quiz 1</a>
+    <a href="angeloQuiz.html" data-title="Quiz 2">Quiz 2</a>
+    <a href="#" data-title="Quiz 3">Quiz 3</a>
+    <div id="ideaLamp"></div>
+  </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const slideBar = document.getElementById('slideInBar');
+        setTimeout(() => {
+          slideBar.style.transform = 'translateX(0)';
+          slideBar.style.visibility = 'visible';
+          slideBar.style.opacity = '1';
+        }, 100);
+      });
+    </script>
+    
+
+    
+    <h1>Welcome to my Pokemon Quiz</h1>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <img src="../images/start.png" alt="Start Quiz" id="start-btn" class="center" style="cursor: pointer;" />
+      <audio id="start-sound" src="../audio/start.mp3"></audio>
+    </div>
+
+    <!-- Quiz Content -->
+    <div id="quiz-content" style="display: none;">
+      <!-- Question 1 -->
+      <h2>Question 1</h2>
+      <div class="map-container">
+        <img src="../images/kantoQuizPoster.png" class="center" />
+        <div id="answer1" class="answer-label" style="display: none">Pallet Town</div>
+        <div id="answer2" class="answer-label" style="display: none">Lavender Town</div>
+        <div id="answer3" class="answer-label" style="display: none">Victory Road</div>
+        <div id="answer4" class="answer-label" style="display: none">Cerulean City</div>
+      </div>
+
+      <h2>Name the cities or the area with the labelled numbers from Kanto.</h2>
+      <h3>Enter your answer here:</h3>
+      <form id="quizForm">
+        <input type="text" id="answer" name="answer" class="center" />
+        <input type="submit" value="Submit" class="center button" />
+      </form>
+      <h3 id="result"></h3>
+
+      <!-- Question 2 -->
+      <h2>Question 2</h2>
+      <table cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr>
+          <td style="text-align: center">
+            <img src="../images/Rhydon.png" height="400" width="400" alt="" class="pokemon-img" data-answer="correct" />
+          </td>
+          <td style="text-align: center">
+            <img src="../images/bulbasaur.png" height="400" width="400" alt="" class="pokemon-img" data-answer="wrong" />
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">
+            <img src="../images/mew.png" height="400" width="400" alt="" class="pokemon-img" data-answer="wrong" />
+          </td>
+          <td style="text-align: center">
+            <img src="../images/Arceus.png" height="400" width="400" alt="" class="pokemon-img" data-answer="wrong" />
+          </td>
+        </tr>
+      </table>
+      <h2>Which one of these pokemon was the original - first created pokemon?</h2>
+      <h5>(Click one and hit submit)</h5>
+      <h3 id="result2"></h3>
+      <form id="pokemonForm">
+        <input type="submit" value="Submit" class="button center" />
+      </form>
+
+      <!-- Question 3 -->
+      <h1>Question 3</h1>
+
+      <div class="image-wrapper">
+        <div class="image-container">
+          <img src="../images/clefairy1.jpeg" class="image-base" />
+          <img src="../images/clefairy2.jpeg" class="image-hover" />
+        </div>
+      </div>
+      <h2>Who's that Pokémon??</h2>
+      <h5>(Hover the image to get a clue, then choose the right answer!)</h5>
+
+      <div class="options-grid">
+        <div class="answer-option" data-answer="correct">Clefairy</div>
+        <div class="answer-option" data-answer="wrong">Jigglypuff</div>
+        <div class="answer-option" data-answer="wrong">Cleffa</div>
+        <div class="answer-option" data-answer="wrong">Wigglytuff</div>
+      </div>
+
+      <form id="question3Form">
+        <input type="submit" value="Submit" class="center button" />
+      </form>
+
+      <h3 id="result3"></h3>
+
+       <!-- Question 4 -->
+      <h1>Question 4</h1>
+      <h2>Which Pokémon makes this cry?</h2>
+      <h5>(Click the Pokédex and listen to the cry)</h5>
+
+      <div class="dex-wrapper">
+        <img src="../images/pokedex.png" id="play-cry" class="dex-image" />
+        <img src="../images/missing.png" id="dex-reveal" class="dex-image" />
+      </div>
+
+      <audio id="poke-cry" src="../audio/kangaskhan.mp3"></audio>
+
+      <div class="options-grid">
+        <div class="answer-option" data-answer="wrong">Charizard</div>
+        <div class="answer-option" data-answer="wrong">Rhydon</div>
+        <div class="answer-option" data-answer="wrong">Rhyhorn</div>
+        <div class="answer-option" data-answer="correct">Kangaskhan</div>
+      </div>
+
+      <form id="question4Form">
+        <input type="submit" value="Submit" class="center button" />
+      </form>
+
+      <h3 id="result4"></h3>
+
+    <!-- Question 5 -->
+    <h1>Question 5</h1>
+    <h2>What is strong against electric types like Pikachu?</h2>
+
+    <div class="pika-wrapper">
+      <img src="../images/basePika.png" id="pikachu-img" alt="Pikachu" />
+    </div>
+
+    <div class="type-options-grid">
+      <img src="../images/fire.png" class="type-icon" data-answer="wrong" alt="Fire" />
+      <img src="../images/water.png" class="type-icon" data-answer="wrong" alt="Water" />
+      <img src="../images/ground.png" class="type-icon" data-answer="correct" alt="Ground" />
+      <img src="../images/steel.png" class="type-icon" data-answer="wrong" alt="Steel" />
+    </div>
+
+    <form id="question5Form">
+      <input type="submit" value="Submit" class="center button" />
+    </form>
+
+    <h3 id="result5"></h3>
+
+
+
+      <!-- Shared Audio -->
+      <audio id="Correct" src="../audio/Correct.mp3"></audio>
+      <audio id="Wrong" src="../audio/Wrong.mp3"></audio>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      window.addEventListener("load", function () {
+      document.getElementById("start-btn").addEventListener("click", function () {
+      const startSound = document.getElementById("start-sound");
+      startSound.play();
+      document.getElementById("start-screen").style.display = "none";
+      document.getElementById("quiz-content").style.display = "block";
+
+      document.getElementById("timer-container").style.display = "flex";
+      
+      let timeLeft = 600; 
+      const timerEl = document.getElementById("timer");
+
+      const updateTimer = () => {
+        const mins = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+        const secs = String(timeLeft % 60).padStart(2, '0');
+        timerEl.textContent = `${mins}:${secs}`;
+
+        if (timeLeft > 0) {
+          timeLeft--;
+        } else {
+          clearInterval(countdown);
+          timerEl.textContent = "00:00";
+          alert("Time's up!");
+          document.querySelectorAll("input, button").forEach(el => el.disabled = true);
+        }
+      };
+
+      updateTimer(); 
+      const countdown = setInterval(updateTimer, 1000);
+    });
+
+    
+        document.getElementById("quizForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const answer = document.getElementById("answer").value.trim().toLowerCase();
+          const resultElement = document.getElementById("result");
+          const correctSound = document.getElementById("Correct");
+          const wrongSound = document.getElementById("Wrong");
+    
+          const answers = {
+            "pallet town": "answer1",
+            "lavender town": "answer2",
+            "victory road": "answer3",
+            "cerulean city": "answer4",
+          };
+    
+          if (answers[answer]) {
+            document.getElementById(answers[answer]).style.display = "block";
+            resultElement.innerHTML = `Correct! ${answer.charAt(0).toUpperCase() + answer.slice(1)} is the right answer.`;
+            resultElement.className = "correct";
+            correctSound.play();
+          } else {
+            resultElement.innerHTML = `Incorrect, Try again!`;
+            resultElement.className = "incorrect";
+            wrongSound.play();
+          }
+        });
+    
+        let selectedImage = null;
+        document.querySelectorAll(".pokemon-img").forEach((img) => {
+          img.addEventListener("click", function () {
+            if (selectedImage) selectedImage.style.border = "none";
+            selectedImage = img;
+            selectedImage.style.border = "5px solid var(--primary-blue)";
+          });
+        });
+    
+        document.getElementById("pokemonForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const resultElement = document.getElementById("result2");
+          const correctSound = document.getElementById("Correct");
+          const wrongSound = document.getElementById("Wrong");
+    
+          if (!selectedImage) {
+            resultElement.innerHTML = "Please select a Pokémon before submitting.";
+            resultElement.className = "incorrect";
+            return;
+          }
+    
+          if (selectedImage.getAttribute("data-answer") === "correct") {
+            resultElement.innerHTML = "Correct! Rhydon was the first Pokémon designed by Gamefreak.";
+            resultElement.className = "correct";
+            correctSound.play();
+          } else {
+            resultElement.innerHTML = "Incorrect! Try again.";
+            resultElement.className = "incorrect";
+            wrongSound.play();
+          }
+        });
+    
+        const imageHover = document.querySelector(".image-hover");
+        if (imageHover) {
+          document.querySelector(".image-container").addEventListener("mousemove", (e) => {
+            const rect = e.target.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            imageHover.style.setProperty("--x", `${x}%`);
+            imageHover.style.setProperty("--y", `${y}%`);
+          });
+        }
+    
+        let selectedOption3 = null;
+        document.querySelectorAll(".answer-option").forEach(option => {
+          option.addEventListener("click", () => {
+            document.querySelectorAll(".answer-option").forEach(o => o.classList.remove("selected"));
+            selectedOption3 = option;
+            option.classList.add("selected");
+          });
+        });
+    
+        document.getElementById("question3Form").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const resultElement = document.getElementById("result3");
+          const correctSound = document.getElementById("Correct");
+          const wrongSound = document.getElementById("Wrong");
+    
+          if (!selectedOption3) {
+            resultElement.innerHTML = "Please select an answer first!";
+            resultElement.className = "incorrect";
+            return;
+          }
+    
+          const isCorrect = selectedOption3.getAttribute("data-answer") === "correct";
+    
+          if (isCorrect) {
+            resultElement.innerHTML = "Correct! Clefairy is the right answer.";
+            resultElement.className = "correct";
+            correctSound.play();
+          } else {
+            resultElement.innerHTML = "Incorrect! Try again.";
+            resultElement.className = "incorrect";
+            wrongSound.play();
+          }
+        });
+
+          let selectedOption4 = null;
+
+          document.getElementById("play-cry").addEventListener("click", () => {
+            const cry = document.getElementById("poke-cry");
+            cry.currentTime = 0;
+            cry.play();
+          });
+
+          document.querySelectorAll(".answer-option").forEach(option => {
+            option.addEventListener("click", () => {
+              document.querySelectorAll(".answer-option").forEach(o => o.classList.remove("selected"));
+              selectedOption4 = option;
+              option.classList.add("selected");
+            });
+          });
+
+        document.getElementById("question4Form").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const resultElement = document.getElementById("result4");
+          const correctSound = document.getElementById("Correct");
+          const wrongSound = document.getElementById("Wrong");
+
+          if (!selectedOption4) {
+            resultElement.innerHTML = "Please select an answer!";
+            resultElement.className = "incorrect";
+            return;
+          }
+
+          const isCorrect = selectedOption4.getAttribute("data-answer") === "correct";
+
+          if (isCorrect) {
+            resultElement.innerHTML = "Correct! That cry belongs to Kangaskhan.";
+            resultElement.className = "correct";
+            correctSound.play();
+            document.getElementById("dex-reveal").src = "../images/kangaskhan.png";
+          } else {
+            resultElement.innerHTML = "Incorrect! Try again.";
+            resultElement.className = "incorrect";
+            wrongSound.play();
+          }
+        });
+
+              // Question 5 - Type Matchup
+      let selectedType = null;
+      document.querySelectorAll(".type-icon").forEach(icon => {
+        icon.addEventListener("click", () => {
+          document.querySelectorAll(".type-icon").forEach(i => i.classList.remove("selected"));
+          selectedType = icon;
+          icon.classList.add("selected");
+        });
+      });
+
+      document.getElementById("question5Form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const resultElement = document.getElementById("result5");
+        const correctSound = document.getElementById("Correct");
+        const wrongSound = document.getElementById("Wrong");
+        const pikachuImg = document.getElementById("pikachu-img");
+
+        if (!selectedType) {
+          resultElement.innerHTML = "Please choose a type!";
+          resultElement.className = "incorrect";
+          return;
+        }
+
+        const isCorrect = selectedType.getAttribute("data-answer") === "correct";
+
+        if (isCorrect) {
+          pikachuImg.src = "../images/pikaScared.png";
+          resultElement.innerHTML = "Correct! Ground types are strong against Electric!";
+          resultElement.className = "correct";
+          correctSound.play();
+        } else {
+          pikachuImg.src = "../images/pikaLaugh.png";
+          resultElement.innerHTML = "Incorrect! Try again.";
+          resultElement.className = "incorrect";
+          wrongSound.play();
+        }
+      });
+
+
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slideBar = document.getElementById("slideInBar");
+
+        setTimeout(() => {
+          slideBar.classList.add("show");
+        }, 100);
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            slideBar.style.opacity = "0";
+            slideBar.style.pointerEvents = "none";
+          } else {
+            slideBar.style.opacity = "1";
+            slideBar.style.pointerEvents = "auto";
+          }
+        });
+      });
+    </script>
+
+    
+  </body>
+</html>
