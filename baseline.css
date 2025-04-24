@@ -123,6 +123,18 @@ body {
   margin: 0 0 15px 0;
 }
 
+.info-block {
+  align-self: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 1.5;
+}
+
+.info-block p {
+  margin: 2px 0;
+}
+
+
 .options {
   display: inline-block;
   text-align: left;
