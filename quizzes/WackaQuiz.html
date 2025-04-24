@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic meta tags for character set and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celebrity Quiz</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Quiz header -->
+  <header>Silly Celebrity Quiz</header>
+
+  <!-- Main quiz container (visible during quiz) -->
+  <div class="quiz-container" id="quiz-container">
+    <!-- Container for celebrity image -->
+    <div class="quiz-image">
+      <img id="celebrity-image" src="" alt="Celebrity image" width="300" height="300">
+    </div>
+   
+    <!-- Question text will be inserted here -->
+    <div class="question" id="question">Question</div>
+   
+    <!-- Container for answer buttons -->
+    <div class="button-grid" id="answer-buttons">
+      <!-- Buttons will be injected here by JavaScript -->
+    </div>
+   
+    <!-- Navigation and hint area -->
+    <div class="navigation">
+      <!-- Hint button -->
+      <button class="hint-button" id="hint-button">Need a Hint?</button>
+      <!-- Hint-text display-->
+      <div class="hint-text" id="hint-text" style="display:none;"></div>
+      <!-- Score display -->
+      <div class="score-display" id="score-display">Score: 0</div>
+    </div>
+  </div>
+
+  <!-- Results container-->
+  <div class="quiz-container2" id="result-container" style="display:none;">
+    <div class="quiz-image">Well Done you have completed the quiz</div>
+    <div class="quiz-image">If you got a score of 3/5 you pass!!</div>
+    <!-- Final score-->
+    <div class="question" id="final-score"></div>
+    <div class="button-grid">
+      <!-- Restart button-->
+      <button class="quiz-button" onclick="startQuiz()">Try Again</button>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+

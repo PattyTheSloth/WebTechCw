@@ -1,0 +1,196 @@
+/* Twitter Blue Color Palette */
+:root {
+  --twitter-blue: #1DA1F2;
+  --twitter-blue-dark: #1991DB;
+  --twitter-blue-light: #E8F5FE;
+  --twitter-white: #FFFFFF;
+  --twitter-black: #14171A;
+  --twitter-dark-gray: #657786;
+  --twitter-light-gray: #AAB8C2;
+  --twitter-extra-light-gray: #E1E8ED;
+  --twitter-extra-extra-light-gray: #F5F8FA;
+  --twitter-green: #17BF63;
+  --twitter-red: #E0245E;
+}
+
+/* Base styling*/
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--twitter-extra-extra-light-gray);
+  color: var(--twitter-black);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header styling with Twitter blue */
+header {
+  background-color: var(--twitter-blue);
+  color: var(--twitter-white);
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Container styling */
+.quiz-container, .quiz-container2 {
+  margin: 20px auto;
+  padding: 25px;
+  width: 90%;
+  max-width: 600px;
+  background-color: var(--twitter-white);
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--twitter-extra-light-gray);
+}
+
+/* Image container styling */
+.quiz-image {
+  margin-bottom: 25px;
+}
+
+/* Celebrity image styling */
+.quiz-image img {
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--twitter-extra-light-gray);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Question text styling */
+.question {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: var(--twitter-black);
+}
+
+/* Grid layout for answer buttons */
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* Base button styling with Twitter colors */
+.quiz-button {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--twitter-blue);
+  border-radius: 8px;
+  background-color: var(--twitter-white);
+  color: var(--twitter-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+/* Button hover effect */
+.quiz-button:hover {
+  background-color: var(--twitter-blue-light);
+  transform: translateY(-2px);
+}
+
+/* Correct answer styling (Twitter green) */
+.correct {
+  background-color: var(--twitter-green) !important;
+  color: white !important;
+  border-color: var(--twitter-green) !important;
+}
+
+/* Wrong answer styling (Twitter red) */
+.wrong {
+  background-color: var(--twitter-red) !important;
+  color: white !important;
+  border-color: var(--twitter-red) !important;
+}
+
+/* Navigation area styling */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid var(--twitter-extra-light-gray);
+}
+
+/* Score display styling */
+.score-display {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: var(--twitter-blue-light);
+  border-radius: 8px;
+  color: var(--twitter-blue);
+}
+
+/* Hint button styling (Twitter blue) */
+.hint-button {
+  padding: 10px 20px;
+  background-color: var(--twitter-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+/* Hint button hover effect */
+.hint-button:hover {
+  background-color: var(--twitter-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* Hint button disabled state */
+.hint-button:disabled {
+  background-color: var(--twitter-light-gray);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Hint text styling */
+.hint-text {
+  font-style: italic;
+  color: var(--twitter-dark-gray);
+  margin: 15px 0;
+  padding: 12px;
+  background-color: var(--twitter-extra-extra-light-gray);
+  border-radius: 8px;
+  border-left: 4px solid var(--twitter-blue);
+}
+
+/* Results container specific styling */
+.quiz-container2 {
+  text-align: center;
+}
+
+/* Retry button styling */
+.quiz-container2 .quiz-button {
+  background-color: var(--twitter-blue);
+  color: white;
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+  border: none;
+}
+
+.quiz-container2 .quiz-button:hover {
+  background-color: var(--twitter-blue-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+  
