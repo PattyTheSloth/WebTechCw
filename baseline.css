@@ -105,7 +105,13 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.content-inner {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .question-block {
