@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scoreDisplay = document.getElementById('scoreDisplay');
         scoreDisplay.textContent = `Your final score is: ${score} out of ${total}`;
-        document.getElementById('comgratulations_sound').play();
+        document.getElementById('congratulations_sound').play();
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
