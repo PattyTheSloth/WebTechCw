@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
+//Timer, load, startscreen and start quiz logic.
 window.addEventListener("load", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
         const startSound = document.getElementById("start-sound");
@@ -41,7 +41,7 @@ window.addEventListener("load", function () {
         const countdown = setInterval(updateTimer, 1000);
     });
 
-
+    //Question 1 Logic
     document.getElementById("Question1").addEventListener("submit", function (event) {
         event.preventDefault();
         const answer = document.getElementById("answer").value.trim().toLowerCase();
