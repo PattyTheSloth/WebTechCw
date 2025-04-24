@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic meta tags for character set and responsive viewport -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Celebrity Quiz</title>
@@ -9,8 +8,7 @@
   <link rel="stylesheet" href="Wstyles.css" />
 </head>
 <body>
-
-  <!-- Quiz header -->
+  <!--Quiz header-->
   <div class="slide-in-bar" id="slideInBar">
     <a href="../index.html" data-title="Home">Home</a>
     <a href="patrykQuiz.html" data-title="Quiz 1">Quiz 1</a>
@@ -18,9 +16,12 @@
     <a href="WackaQuiz.html" data-title="Quiz 3">Quiz 3</a>
     <div id="ideaLamp"></div>
   </div>
-  <!-- Main quiz container -->
-  <div class="quiz-container" id="quiz-container">
 
+  <div class="vertical-spacer"></div>
+  
+
+  <!--Main quiz container-->
+  <div class="quiz-container" id="quiz-container">
     <!-- Container for celebrity image -->
     <div class="quiz-image">
       <img id="celebrity-image" src="" alt="Celebrity image" width="300" height="300">
@@ -34,13 +35,13 @@
       <!-- Buttons will be injected here by JavaScript -->
     </div>
    
-    <!-- Navigation and hint area -->
+    <!--Navigation and hint area-->
     <div class="navigation">
-      <!-- Hint button -->
+      <!-- Hint button-->
       <button class="hint-button" id="hint-button">Need a Hint?</button>
-      <!-- Hint-text display-->
+      <!--Hint-text display-->
       <div class="hint-text" id="hint-text" style="display:none;"></div>
-      <!-- Score display -->
+      <!--Score display-->
       <div class="score-display" id="score-display">Score: 0</div>
     </div>
   </div>
@@ -57,9 +58,10 @@
     </div>
   </div>
 
-  <!-- Link to external JavaScript file -->
+  <!-- Link to JS file -->
   <script src="Wscript.js"></script>
 </body>
 </html>
+
 
 

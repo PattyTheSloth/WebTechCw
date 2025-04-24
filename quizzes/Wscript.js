@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const slideBar = document.getElementById('slideInBar');
+  
+  slideBar.style.transform = 'translateX(-100%)';
+  slideBar.style.visibility = 'hidden';
+  slideBar.style.opacity = '0';
+  
+  setTimeout(() => {
+    slideBar.style.transform = 'translateX(0)';
+    slideBar.style.visibility = 'visible';
+    slideBar.style.opacity = '1';
+  }, 100);
+
+
+  const ideaLamp = document.getElementById('ideaLamp');
+  ideaLamp.addEventListener('mouseenter', () => {
+    ideaLamp.style.transform = 'scale(1.1) rotate(10deg)';
+  });
+  ideaLamp.addEventListener('mouseleave', () => {
+    ideaLamp.style.transform = 'scale(1) rotate(0deg)';
+  });
+
 // Quiz questions
 const questions = [
   {
@@ -164,14 +186,14 @@ function selectAnswer(e) {
   }, 1500);
 }
 
-// Update the score display
+// Update score
 function updateScore() {
   scoreDisplay.textContent = `Score: ${score}/${questions.length}`;
 }
 
-// Show final results screen
+// Result Screen
 function showResult() {
   quizContainer.style.display = "none";
   resultContainer.style.display = "block";
   finalScore.textContent = `Your final score: ${score} out of ${questions.length}`;
-}
+}})
