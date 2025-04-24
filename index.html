@@ -1,139 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>WebTechCw</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .slide-in-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-color: #1DA1F2;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center the buttons */
-            gap: 20px; /* Added spacing */
-            transform: translateX(-100%);
-            transition: transform 1.5s ease;
-            visibility: hidden;
-            opacity: 0;
-        }
-
-        .slide-in-bar a {
-            width: auto;  
-            padding: 10px 20px;
-            text-align: center;
-            color: #fff;
-            background-color: #0d8de0;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            transition: color 0.3s;
-            z-index: 1;
-        }
-
-        .slide-in-bar a::before {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            transform-origin: bottom left;
-            transform: scale(0);
-            transition: transform 0.3s;
-            z-index: -1;
-        }
-        .slide-in-bar a:hover::before {
-            transform: scale(1);
-            top: 0;
-        }
-        .slide-in-bar a:hover {
-            color: #000;
-        }
-
-        .slide-in-bar a::after {
-            content: attr(data-title);
-            position: absolute;
-            bottom: 130%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #000;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .slide-in-bar a:hover::after {
-            opacity: 1;
-        }
-
-        #ideaLamp {
-            width: 80px;
-            height: 80px;
-            background-image: url('./images/image_2025-03-24_180019104-removebg-preview.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-left: 20px; /* Balanced spacing */
-            margin-right: 20px;
-            cursor: pointer;
-        }
-
-        #ideaLamp:hover {
-            transform: scale(1.1) rotate(10deg);
-            transition: transform 0.3s ease;
-        }
-
-        .content {
-            margin-top: 110px;
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Welcome - WebTechCw</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="slide-in-bar" id="slideInBar">
-        <a href="index.html" data-title="Home">Home</a>
-        <a href="quizzes/patrykQuiz.html" data-title="Quiz 1">Quiz 1</a>
-        <a href="quizzes/angeloQuiz.html" data-title="Quiz 2">Quiz 2</a>
-        <a href="#" data-title="Quiz 3">Quiz 3</a>
-        <div id="ideaLamp"></div>
-    </div>
+  <div class="slide-in-bar" id="slideInBar">
+    <a href="index.html" data-title="Home">Home</a>
+    <a href="quiz.html" data-title="Quiz 1">Quiz 1</a>
+    <a href="#" data-title="Quiz 2">Quiz 2</a>
+    <a href="#" data-title="Quiz 3">Quiz 3</a>
+    <div id="ideaLamp"></div>
+  </div>
 
-    <div class="content">
-        <h1>Home page for Web Tech Coursework</h1>
-        <p>Here will be home page tests.</p>
-    </div>
+  <div class="content">
+    <h1>Welcome to WebTechCw</h1>
+    <p>Click on Quiz 1 to get started!</p>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slideBar = document.getElementById('slideInBar');
-            setTimeout(() => {
-                slideBar.style.transform = 'translateX(0)';
-                slideBar.style.visibility = 'visible';
-                slideBar.style.opacity = '1';
-            }, 100);  // Added slight delay for smooth loading
-        });
-
-        const ideaLamp = document.getElementById('ideaLamp');
-        
-        ideaLamp.addEventListener('mouseenter', () => {
-            ideaLamp.style.transform = 'scale(1.1) rotate(10deg)';
-        });
-
-        ideaLamp.addEventListener('mouseleave', () => {
-            ideaLamp.style.transform = 'scale(1) rotate(0deg)';
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
