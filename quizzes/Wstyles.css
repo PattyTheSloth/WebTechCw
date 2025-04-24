@@ -13,7 +13,7 @@
   --twitter-red: #E0245E;
 }
 
-/* NAV BAR STYLES */
+/* NAVIGATION BAR STYLES */
 .NavBar {
   display: flex;                
   justify-content: center;      
@@ -53,6 +53,16 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+/* Header styling with Twitter blue */
+header {
+  background-color: var(--twitter-blue);
+  color: var(--twitter-white);
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* Container styling */
@@ -215,4 +225,3 @@ body {
     gap: 15px;
   }
 }
-  
