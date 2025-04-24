@@ -13,36 +13,92 @@
   --twitter-red: #E0245E;
 }
 
-/* NAVIGATION BAR STYLES */
-.NavBar {
-  display: flex;                
-  justify-content: center;      
-  gap: 15px;                    
-  padding: 10px;                
-  background-color: var(--twitter-blue);
+.slide-in-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #1DA1F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transform: translateX(-100%);
+  transition: transform 1.5s ease;
+  visibility: hidden;
+  opacity: 0;
 }
 
-/* Style for all navigation links */
-.NavBar a {
-  color: var(--twitter-white);  
-  text-decoration: none;       
-  font-weight: bold;            
-  padding: 8px 12px;           
-  border-radius: 4px;           
-  transition: background-color 0.2s; 
+.slide-in-bar a {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0d8de0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  z-index: 1;
 }
 
-/* Hover state for navigation links */
-.NavBar a:hover {
-  background-color: var(--twitter-blue-dark);
+.slide-in-bar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: scale(0);
+  transition: transform 0.3s;
+  z-index: -1;
 }
 
-@media (max-width: 480px) {
-  .NavBar {
-    flex-direction: column;     
-    gap: 8px;                   
-    padding: 8px;               
-  }
+.slide-in-bar a:hover::before {
+  transform: scale(1);
+  top: 0;
+}
+
+.slide-in-bar a:hover {
+  color: #000;
+}
+
+.slide-in-bar a::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.slide-in-bar a:hover::after {
+  opacity: 1;
+}
+
+#ideaLamp {
+  width: 80px;
+  height: 80px;
+  background-image: url('./images/image_2025-03-24_180019104-removebg-preview.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+#ideaLamp:hover {
+  transform: scale(1.1) rotate(10deg);
+  transition: transform 0.3s ease;
 }
 
 /* Base styling*/
