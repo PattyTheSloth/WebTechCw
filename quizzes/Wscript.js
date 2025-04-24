@@ -16,8 +16,8 @@ const questions = [
     question: "Who is this famous actor?",
     hint: "He won an Oscar for The Revenant",
     answers: [
-      { text: "Leonardo DiCaprio", correct: true },
       { text: "Brad Pitt", correct: false },
+      { text: "Leonardo DiCaprio", correct: true },
       { text: "Tom Cruise", correct: false },
       { text: "Johnny Depp", correct: false }
     ]
@@ -27,9 +27,9 @@ const questions = [
     question: "Identify this tech entrepreneur",
     hint: "He founded Facebook",
     answers: [
-      { text: "Mark Zuckerberg", correct: true },
       { text: "Elon Musk", correct: false },
       { text: "Bill Gates", correct: false },
+      { text: "Mark Zuckerberg", correct: true },
       { text: "Jeff Bezos", correct: false }
     ]
   },
@@ -39,9 +39,9 @@ const questions = [
     hint: "He starred in star wars",
     answers: [
       {text: "Kenn Whittaker", correct: false},
-      {text: "Forrest Whittaker", correct: true},
       {text: "Denzel Washington", correct: false},
       {text: "John Boyega", correct: false},
+      {text: "Forrest Whittaker", correct: true},
     ]
   },
   {

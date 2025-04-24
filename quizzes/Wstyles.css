@@ -13,6 +13,38 @@
   --twitter-red: #E0245E;
 }
 
+/* NAV BAR STYLES */
+.NavBar {
+  display: flex;                
+  justify-content: center;      
+  gap: 15px;                    
+  padding: 10px;                
+  background-color: var(--twitter-blue);
+}
+
+/* Style for all navigation links */
+.NavBar a {
+  color: var(--twitter-white);  
+  text-decoration: none;       
+  font-weight: bold;            
+  padding: 8px 12px;           
+  border-radius: 4px;           
+  transition: background-color 0.2s; 
+}
+
+/* Hover state for navigation links */
+.NavBar a:hover {
+  background-color: var(--twitter-blue-dark);
+}
+
+@media (max-width: 480px) {
+  .NavBar {
+    flex-direction: column;     
+    gap: 8px;                   
+    padding: 8px;               
+  }
+}
+
 /* Base styling*/
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -21,16 +53,6 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-}
-
-/* Header styling with Twitter blue */
-header {
-  background-color: var(--twitter-blue);
-  color: var(--twitter-white);
-  padding: 20px;
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bold;
 }
 
 /* Container styling */
@@ -67,7 +89,7 @@ header {
 }
 
 /* Grid layout for answer buttons */
-.button-grid, .slide-in-bar {
+.button-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
