@@ -67,7 +67,7 @@ header {
 }
 
 /* Grid layout for answer buttons */
-.button-grid, .slideInBar {
+.button-grid, .slide-in-bar {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
