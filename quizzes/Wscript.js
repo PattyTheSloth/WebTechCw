@@ -1,7 +1,7 @@
 // Quiz questions
 const questions = [
   {
-    image: "images/Obama.jpg",
+    image: "../images/Obama.jpg",
     question: "Can you guess who this really is?",
     hint: "This person was the 44th President of the USA",
     answers: [
@@ -12,7 +12,7 @@ const questions = [
     ]
   },
   {
-    image: "images/LeoDiCap.jpg",
+    image: "../images/LeoDiCap.jpg",
     question: "Who is this famous actor?",
     hint: "He won an Oscar for The Revenant",
     answers: [
@@ -23,7 +23,7 @@ const questions = [
     ]
   },
   {
-    image: "images/MarkZuk.jfif",
+    image: "../images/MarkZuk.jfif",
     question: "Identify this tech entrepreneur",
     hint: "He founded Facebook",
     answers: [
@@ -34,7 +34,7 @@ const questions = [
     ]
   },
   {
-    image: "images/ForrestWhittaker.jpg",
+    image: "../images/ForrestWhittaker.jpg",
     question: "Who could this be?",
     hint: "He starred in star wars",
     answers: [
@@ -45,7 +45,7 @@ const questions = [
     ]
   },
   {
-    image: "images/WillSmith.jpg",
+    image: "../images/WillSmith.jpg",
     question: "Can you guess who this is?",
     hint: "His son played the karate kid",
     answers: [
