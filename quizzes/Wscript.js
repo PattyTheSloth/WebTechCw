@@ -78,29 +78,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/WillSmith.jpg",
-    question: "Can you guess who this is?",
-    hint: "His son played the karate kid",
-    answers: [
-      {text: "Alfonso Riberio", correct: false},
-      {text: "Will Smith", correct: true},
-      {text: "Morgan Freeman", correct: false},
-      {text: "Jamie Foxx", correct: false},
-    ]
-  },
-  {
-    Audio: "../images/WillSmith.jpg",
-    question: "Can you guess who this is?",
-    hint: "His son played the karate kid",
-    answers: [
-      {text: "Alfonso Riberio", correct: false},
-      {text: "Will Smith", correct: true},
-      {text: "Morgan Freeman", correct: false},
-      {text: "Jamie Foxx", correct: false},
-    ]
-  },
-  {
-    Audio: "../images/MrBean,jpg",
+    Audio: "../images/MrBean.jpg",
     question: "Who is this children's tv character?",
     hint: "He has his own tv show and movie",
     answers: [
@@ -111,7 +89,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/JimC",
+    Audio: "../images/JimC.jpg",
     question: "Guess this famous comedian?",
     hint: "He played the famous character the mask",
     answers: [
@@ -122,7 +100,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/RDJ",
+    Audio: "../images/RDJ.jpg",
     question: "Who is this action star?",
     hint: "He is now Doctor Doom",
     answers: [
