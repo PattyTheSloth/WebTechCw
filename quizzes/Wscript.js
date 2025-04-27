@@ -77,6 +77,61 @@ const questions = [
       {text: "Jamie Foxx", correct: false},
     ]
   },
+  {
+    Audio: "../images/WillSmith.jpg",
+    question: "Can you guess who this is?",
+    hint: "His son played the karate kid",
+    answers: [
+      {text: "Alfonso Riberio", correct: false},
+      {text: "Will Smith", correct: true},
+      {text: "Morgan Freeman", correct: false},
+      {text: "Jamie Foxx", correct: false},
+    ]
+  },
+  {
+    Audio: "../images/WillSmith.jpg",
+    question: "Can you guess who this is?",
+    hint: "His son played the karate kid",
+    answers: [
+      {text: "Alfonso Riberio", correct: false},
+      {text: "Will Smith", correct: true},
+      {text: "Morgan Freeman", correct: false},
+      {text: "Jamie Foxx", correct: false},
+    ]
+  },
+  {
+    Audio: "../images/MrBean,jpg",
+    question: "Who is this children's tv character?",
+    hint: "He has his own tv show and movie",
+    answers: [
+      {text: "Mr Tumble", correct: false},
+      {text: "Pee-wee Herman", correct: false},
+      {text: "Johnny English", correct: false},
+      {text: "Mr Bean", correct: true},
+    ]
+  },
+  {
+    Audio: "../images/JimC",
+    question: "Guess this famous comedian?",
+    hint: "He played the famous character the mask",
+    answers: [
+      {text: "Jim Carey", correct: true},
+      {text: "Robin Williams", correct: false},
+      {text: "Jack Black", correct: false},
+      {text: "Chris Farley", correct: false},
+    ]
+  },
+  {
+    Audio: "../images/RDJ",
+    question: "Who is this action star?",
+    hint: "He is now Doctor Doom",
+    answers: [
+      {text: "Ryan Reynolds", correct: false},
+      {text: "Paul Rudd", correct: false},
+      {text: "Robert Downey Jr", correct: true},
+      {text: "Chris Pratt", correct: false},
+    ]
+  },
 ];
 
 // Quiz state variables
