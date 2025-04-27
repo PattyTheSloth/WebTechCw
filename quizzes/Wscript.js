@@ -78,7 +78,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/MrBean.jpg",
+    image: "../images/MrBean.jpg",
     question: "Who is this children's tv character?",
     hint: "He has his own tv show and movie",
     answers: [
@@ -89,7 +89,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/JimC.jpg",
+    image: "../images/JimC.jpg",
     question: "Guess this famous comedian?",
     hint: "He played the famous character the mask",
     answers: [
@@ -100,7 +100,7 @@ const questions = [
     ]
   },
   {
-    Audio: "../images/RDJ.jpg",
+    image: "../images/RDJ.jpg",
     question: "Who is this action star?",
     hint: "He is now Doctor Doom",
     answers: [
