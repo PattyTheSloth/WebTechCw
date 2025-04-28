@@ -117,7 +117,6 @@ let currentIndex = 0;
 let score = 0;            
 let hintUsed = false;      
 
-// DOM element references
 const quizContainer = document.getElementById("quiz-container");
 const resultContainer = document.getElementById("result-container");
 const question = document.getElementById("question");
@@ -128,7 +127,7 @@ const scoreDisplay = document.getElementById("score-display");
 const hintButton = document.getElementById("hint-button");
 const hintText = document.getElementById("hint-text");
 
-// Initialize the quiz when page loads
+// Initialize quiz 
 startQuiz();
 
 // Function to start or restart the quiz
@@ -145,8 +144,8 @@ function startQuiz() {
 // Display the current question and answers
 function showQuestion() {
   resetButtons();
-  hintUsed = false;  // Reset hint flag for new question
-  hintText.style.display = "none"; // Hide any previous hint
+  hintUsed = false;  
+  hintText.style.display = "none"; 
  
   const currentQuestion = questions[currentIndex];
   question.textContent = currentQuestion.question;
@@ -159,13 +158,12 @@ function showQuestion() {
       hintText.textContent = currentQuestion.hint;
       hintText.style.display = "block";
       hintUsed = true;
-      // Disable hint button after use
       hintButton.disabled = true;
     }
   };
 
   // Re-enable hint button for new question
-  hintButton.disabled = false; // Re-enable hint button for new question
+  hintButton.disabled = false;
 
   // Create answer buttons for each answer
   currentQuestion.answers.forEach(answer => {
@@ -183,12 +181,10 @@ function resetButtons() {
   answerButtons.innerHTML = "";
 }
 
-// Handle when user selects an answer
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
 
-  // Apply visual feedback based on answer
   if (isCorrect) {
     selectedBtn.classList.add("correct");
     score++;
@@ -197,7 +193,7 @@ function selectAnswer(e) {
     selectedBtn.classList.add("wrong");
   }
 
-  // Disable all buttons and highlight correct answer
+  // Disable all buttons and show correct answer
   Array.from(answerButtons.children).forEach(btn => {
     btn.disabled = true;
     if (btn.dataset.correct === "true") {
@@ -205,10 +201,8 @@ function selectAnswer(e) {
     }
   });
 
-  // Disable hint button after answering
   hintButton.disabled = true;
 
-  // Move to next question or show results after delay
   setTimeout(() => {
     currentIndex++;
     if (currentIndex < questions.length) {
